@@ -1,4 +1,4 @@
-# EventHubsWithKafkaSDK
+# Connecting your code to Azure Event Hubs from a Kafka SDK
 
 ### Introduction
 
