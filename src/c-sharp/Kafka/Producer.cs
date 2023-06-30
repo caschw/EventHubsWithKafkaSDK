@@ -1,27 +1,28 @@
 ﻿using Confluent.Kafka;
+using EventHubsWithKafka.Kafka.Helpers;
 
-namespace EventHubsWithKafka
+namespace EventHubsWithKafka.Kafka
 {
     /// <summary>
     /// https://github.com/confluentinc/confluent-kafka-dotnet#basic-producer-examples
     /// </summary>
-    public class KafkaProducer
+    public class Producer
     {
         private EventHubContext context;
 
-        public KafkaProducer(EventHubContext context)
+        public Producer(EventHubContext context)
         {
             this.context = context;
         }
 
         public async Task RunAsync(string message)
         {
-            var config = new ProducerConfig 
+            var config = new ProducerConfig
             {
                 // Start Changes from sample
                 BootstrapServers = context.BootstrapServer,
                 SecurityProtocol = SecurityProtocol.SaslSsl,
-                SaslMechanism = SaslMechanism.Plain, 
+                SaslMechanism = SaslMechanism.Plain,
                 SaslUsername = "$ConnectionString",
                 SaslPassword = context.ConnectionString
                 // End Changes from sample

@@ -1,4 +1,4 @@
-﻿namespace EventHubsWithKafka
+﻿namespace EventHubsWithKafka.Kafka.Helpers
 {
     public class EventHubContext
     {

@@ -1,15 +1,16 @@
 ﻿using Confluent.Kafka;
+using EventHubsWithKafka.Kafka.Helpers;
 
-namespace EventHubsWithKafka
+namespace EventHubsWithKafka.Kafka
 {
     /// <summary>
     /// https://github.com/confluentinc/confluent-kafka-dotnet#basic-consumer-example
     /// </summary>
-    public class KafkaConsumer
+    public class Consumer
     {
         private EventHubContext context;
 
-        public KafkaConsumer(EventHubContext context)
+        public Consumer(EventHubContext context)
         {
             this.context = context;
         }
@@ -19,7 +20,7 @@ namespace EventHubsWithKafka
             var conf = new ConsumerConfig
             {
                 GroupId = "test-consumer-group",
-                
+
                 // Start Changes from sample
                 BootstrapServers = context.BootstrapServer,
                 SecurityProtocol = SecurityProtocol.SaslSsl,
@@ -43,7 +44,8 @@ namespace EventHubsWithKafka
                 // End Changes from sample
 
                 CancellationTokenSource cts = new CancellationTokenSource();
-                Console.CancelKeyPress += (_, e) => {
+                Console.CancelKeyPress += (_, e) =>
+                {
                     e.Cancel = true; // prevent the process from terminating.
                     cts.Cancel();
                 };
