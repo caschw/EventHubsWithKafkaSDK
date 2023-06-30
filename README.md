@@ -16,6 +16,12 @@ It is a common scenario in the cloud to swap out for similar technologies or inf
 
 // TODO: Add steps
 
+#### Bonus integration -- IoT Hub! 😮
+
+Iot Hub is built on top of Event Hubs. If you pay close attention, the service endpoint in the cloud is Event Hub compatible. What this means is we can also connect to this endpoint from the Kafka SDK. 
+
+// TODO: Add Steps
+
 ### Conclusion
 
 It is really refreshing being able to target an entirely different service with an SDK that wasn't built for it. However, we need to remember that we only have compared the most basic feature of each technology, delivering and reading messages off of the queues. There are many more aspects that we haven't looked into. However, since we have unlocked the hardest part of the migration, it will be easy to test the rest.
