@@ -7,6 +7,13 @@ Azure Event Hubs have historically been very similar to Kafka. Today we're going
 It is a common scenario in the cloud to swap out for similar technologies or infrastructure. But often this comes with significant development overhead. Since Event Hubs and Kafka are highly similar, we'll look at the minimum amount of effort it will take to move between them. In this scenario, we're going to assume a codebase that is built around Kafka and a Kafka-native SDK. We'll then point the configuration of this code to the Event Hub endpoint and look what needs to change in order to make this work.
 
 ### Migration Process
+
+#### What is SASL?
+
+// TODO: Add SASL Background
+
+#### Code changes for Event Hubs Authentication
+
 // TODO: Add steps
 
 ### Conclusion
