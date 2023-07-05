@@ -3,8 +3,8 @@
     public class SampleMessage
     {
         public string Timestamp => DateTime.Now.ToString();
-        public TempSensor LiquidSensor => new TempSensor();
-        public string MessageType => "Sample";
+        public TempSensor Payload => new TempSensor();
+        public string MessageType => "LiquidTempSensorReading";
         public string CorrelationId => Guid.NewGuid().ToString();
     }
 
